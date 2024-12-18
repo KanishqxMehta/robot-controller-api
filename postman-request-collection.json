@@ -1,0 +1,1644 @@
+{
+	"info": {
+		"_postman_id": "76a8a5c9-c8a0-4af9-abd3-5b35434fc5fe",
+		"name": "Tester Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32796340"
+	},
+	"item": [
+		{
+			"name": "Robot Commands",
+			"item": [
+				{
+					"name": "GET robot-commands",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.be.null;",
+									"    pm.response.to.not.be.undefined;",
+									"});",
+									"pm.test(\"Response body contains an array of robot commands\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});",
+									"pm.test(\"Each command in the commands contains valid properties\", function",
+									"() {",
+									"    var robotCommands = pm.response.json();",
+									"    for (const command of robotCommands) {",
+									"        pm.expect(command).to.have.property('id');",
+									"        pm.expect(command).to.have.property('name');",
+									"        pm.expect(command).to.have.property('description');",
+									"} });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/robot-commands/",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"robot-commands",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET robot/move",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.be.null;",
+									"    pm.response.to.not.be.undefined;",
+									"});",
+									"",
+									"pm.test(\"Response body contains an array of robot commands\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});",
+									"",
+									"pm.test(\"Each command in the commands contains valid properties\", function",
+									"() {",
+									"    var robotCommands = pm.response.json();",
+									"    for (const command of robotCommands) {",
+									"        pm.expect(command).to.have.property('id');",
+									"        pm.expect(command).to.have.property('name');",
+									"        pm.expect(command).to.have.property('description');",
+									"        pm.expect(command).to.have.property('isMoveCommand').is.true;",
+									"} });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/robot-commands/move",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"robot-commands",
+								"move"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET robot/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.be.null;",
+									"    pm.response.to.not.be.undefined;",
+									"});",
+									"",
+									"pm.test(\"Response body contains a single robot command\", function () {",
+									"    pm.expect(pm.response.json()).to.not.be.an('object');",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/robot-commands/11",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"robot-commands",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST robot",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test for successful response status (200 OK)",
+									"pm.test(\"Status code is OK\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Test newly created command name\", function () {",
+									"    var command = pm.response.json();",
+									"    //pm.expect(command.name).to.equal(pm.variables.get('new-command-name'));",
+									"    var expectedName = pm.variables.get('new-command-name');",
+									"    console.log(expectedName);",
+									"    console.log(command.name);",
+									"    var areNamesEqual = expectedName == command.name;",
+									"    console.log(\"Newly created command name matches the one in the env variable: \" + areNamesEqual);",
+									"    pm.expect(command.name).to.equal(pm.variables.get('new-command-name'));",
+									"});",
+									"",
+									"",
+									"// Test for non-empty response body",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.be.null;",
+									"    pm.response.to.not.be.undefined;",
+									"});",
+									"",
+									"// Test if the response body contains the newly created robot command",
+									"pm.test(\"Response body contains the newly created robot command\", function () {",
+									"    var command = pm.response.json();",
+									"    pm.expect(command).to.have.property('id');",
+									"    pm.expect(command).to.have.property('name');",
+									"    pm.expect(command).to.have.property('description');",
+									"    pm.expect(command).to.have.property('isMoveCommand');",
+									"});",
+									"",
+									"// Test if the response body contains the correct robot command name",
+									"pm.test(\"Check if Location header exists\", function () {",
+									"    pm.response.to.have.header(\"Location\");",
+									"    var locationHeader = pm.response.headers.get(\"Location\");",
+									"    pm.expect(locationHeader).to.exist;",
+									"    var command = pm.response.json();",
+									"    var newResourceUrl = 'https://' + pm.variables.get('api-host') + ':' + pm.variables.get('port') + '/api/robot-commands/' + command.id;",
+									"    pm.expect(locationHeader).to.eql(newResourceUrl);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"NEW_COMMAND\",\n    \"ismovecommand\": {{new-command-move}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/robot-commands/",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"robot-commands",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT robot/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									"",
+									"pm.test(\"Response body is null\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									"pm.test(\"Ensure that the response body is empty\", function () {",
+									"    pm.expect(pm.response.text()).to.be.empty;",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"pm.test(\"Response does not contain sensitive information or unexpected data\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"UpdatedCommand\",\n    \"description\": \"This is an updated command\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/robot-commands/20",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"robot-commands",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE robot/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response content type is json and not null\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).not.to.equal(\"application/json\");",
+									"    pm.expect(pm.response.text()).not.to.equal(\"null\");",
+									"",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body is empty\", function () {",
+									"    pm.expect(pm.response.text()).to.be.empty;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify that the resource is successfully deleted\", function () {",
+									"    pm.response.to.not.be.null;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response format is as expected\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    ",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/robot-commands/40",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"robot-commands",
+								"40"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Maps",
+			"item": [
+				{
+					"name": "GET maps",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.be.null;",
+									"    pm.response.to.not.be.undefined;",
+									"});",
+									"pm.test(\"Response body contains an array of maps\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});",
+									"pm.test(\"Each command in the commands contains valid properties\", function",
+									"() {",
+									"    var maps = pm.response.json();",
+									"    for (const table of maps) {",
+									"        pm.expect(table).to.have.property('id');",
+									"        pm.expect(table).to.have.property('name');",
+									"        pm.expect(table).to.have.property('description');",
+									"        pm.expect(table).to.have.property('rows');",
+									"        pm.expect(table).to.have.property('columns');",
+									"} });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/maps/",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"maps",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET maps/square",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.be.null;",
+									"    pm.response.to.not.be.undefined;",
+									"});",
+									"",
+									"pm.test(\"Response body contains an array of robot commands\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});",
+									"",
+									"pm.test(\"Each command in the commands contains valid properties\", function",
+									"() {",
+									"    var Map = pm.response.json();",
+									"    for (const maps of Map) {",
+									"        pm.expect(maps).to.have.property('id');",
+									"        pm.expect(maps).to.have.property('name');",
+									"        pm.expect(maps).to.have.property('description');",
+									"        pm.expect(maps).to.have.property('rows');",
+									"        pm.expect(maps).to.have.property('columns');",
+									"} });"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/maps/square",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"maps",
+								"square"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET maps/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if the response contains the expected number of items",
+									"pm.test(\"Response contains the correct number of items\", function () {",
+									"    const responseData = pm.response.json();",
+									"    const expectedItemCount = 1; // Update this with the expected number of items",
+									"    pm.expect(responseData).to.have.lengthOf(expectedItemCount);",
+									"});",
+									"",
+									"// Test if the response items have unique IDs",
+									"pm.test(\"Response items have unique IDs\", function () {",
+									"    const responseData = pm.response.json();",
+									"    const idSet = new Set();",
+									"    responseData.forEach(function(item) {",
+									"        pm.expect(idSet.has(item.id)).to.be.false;",
+									"        idSet.add(item.id);",
+									"    });",
+									"});",
+									"",
+									"// Test if the response items have all required properties",
+									"pm.test(\"Response items have all required properties\", function () {",
+									"    const responseData = pm.response.json();",
+									"    const requiredProperties = [\"id\", \"columns\", \"rows\", \"name\", \"description\"]; // Update this with all required properties",
+									"    responseData.forEach(function(item) {",
+									"        requiredProperties.forEach(function(prop) {",
+									"            pm.expect(item).to.have.property(prop);",
+									"        });",
+									"    });",
+									"});",
+									"",
+									"// Test if the response items have valid values for certain properties",
+									"pm.test(\"Response items have valid values for properties\", function () {",
+									"    const responseData = pm.response.json();",
+									"    responseData.forEach(function(item) {",
+									"        // Example: Test if the 'name' property is not empty",
+									"        pm.expect(item.name).to.not.be.empty;",
+									"        // Example: Test if the 'description' property is a string",
+									"        pm.expect(item.description).to.be.a('string');",
+									"    });",
+									"});",
+									"",
+									"// Test if the response items meet certain criteria based on business logic",
+									"pm.test(\"Response items meet certain criteria\", function () {",
+									"    const responseData = pm.response.json();",
+									"    responseData.forEach(function(item) {",
+									"        // Example: Test if the 'rows' property is greater than or equal to the 'columns' property",
+									"        pm.expect(item.rows).to.be.at.least(2);",
+									"        pm.expect(item.columns).to.be.at.least(2);",
+									"        pm.expect(item.rows).to.be.at.most(100);",
+									"        pm.expect(item.columns).to.be.at.most(100);",
+									"        // You can add more criteria based on your business logic",
+									"    });",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/maps/8",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"maps",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST maps",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is OK', function () {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Test newly created map name\", function () {",
+									"    var maps = pm.response.json();",
+									"    pm.expect(maps.name).to.equal(pm.variables.get('new-map-name'));",
+									"});",
+									"",
+									"pm.test('Response body is not empty', function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.be.null;",
+									"    pm.response.to.not.be.undefined;",
+									"})",
+									"",
+									"pm.test('Response body contains the newly created map', function () {",
+									"    var map = pm.response.json();",
+									"    pm.expect(map).to.have.property('id');",
+									"    pm.expect(map).to.have.property('name');",
+									"    pm.expect(map).to.have.property('description');",
+									"    pm.expect(map).to.have.property('rows');",
+									"    pm.expect(map).to.have.property('columns');",
+									"})",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"NEW_MAP\",\n    \"columns\": {{new-columns}},\n    \"rows\": {{new-rows}}\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/maps/",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"maps",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT maps/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body is null\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									"pm.test(\"Ensure that the response body is empty\", function () {",
+									"    pm.expect(pm.response.text()).to.be.empty;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response does not contain sensitive information or unexpected data\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"UpdatedMaps\",\n    \"rows\": {{new-rows}},\n    \"columns\": {{new-columns}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/maps/18",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"maps",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE maps/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response content type is json and not null\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).not.to.equal(\"application/json\");",
+									"    pm.expect(pm.response.text()).not.to.equal(\"null\");",
+									"",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body is empty\", function () {",
+									"    pm.expect(pm.response.text()).to.be.empty;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify that the resource is successfully deleted\", function () {",
+									"    pm.response.to.not.be.null;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response format is as expected\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    ",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/maps/26",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"maps",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET maps/{id}/{x}-{y}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response has the correct Content-Type header\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});",
+									"",
+									"pm.test(\"Response body is a boolean value\", function () {",
+									"  pm.expect(pm.response.text()).to.be.oneOf(['true', 'false']);",
+									"});",
+									"",
+									"pm.test(\"Response body is true\", function () {",
+									"    pm.expect(pm.response.text()).to.equal(\"true\");",
+									"});",
+									"",
+									"pm.test(\"Response time is within an acceptable range\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"pm.test(\"Response body is a boolean value\", function () {",
+									"    const responseBody = pm.response.json();",
+									"    ",
+									"    pm.expect(responseBody).to.be.a('boolean');",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body is either true or false\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.oneOf([true, false]);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(350);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body is either true or false using strict equality\", function () {",
+									"    const responseData = pm.response.json();",
+									"    pm.expect(responseData).to.be.a('boolean');",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify that the response body is a valid boolean value\", function () {",
+									"  pm.expect(pm.response.text()).to.be.oneOf(['true', 'false']);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/maps/10/2-10",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"maps",
+								"10",
+								"2-10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GET users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test if the response status code is 200",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Test if the response body is not empty and is in JSON format",
+									"pm.test(\"Response body is not empty and is JSON\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"});",
+									"",
+									"// Test if the response contains at least 10 users",
+									"pm.test(\"Response contains at least 10 users\", function () {",
+									"    const responseData = pm.response.json();",
+									"    const expectedUserCount = 2; // Update this with the expected minimum number of users",
+									"    pm.expect(responseData.length).to.be.at.least(expectedUserCount);",
+									"});",
+									"",
+									"// Test if each user has a unique ID",
+									"pm.test(\"Each user has a unique ID\", function () {",
+									"    const responseData = pm.response.json();",
+									"    const idSet = new Set();",
+									"    responseData.forEach(function(user) {",
+									"        pm.expect(idSet.has(user.id)).to.be.false;",
+									"        idSet.add(user.id);",
+									"    });",
+									"});",
+									"",
+									"// Test if each user has all required properties",
+									"pm.test(\"Each user has all required properties\", function () {",
+									"    const responseData = pm.response.json();",
+									"    const requiredProperties = [\"id\", \"name\", \"email\", \"role\"]; // Update this with all required properties",
+									"    ",
+									"    responseData.forEach(function(user) {",
+									"        requiredProperties.forEach(function(prop) {",
+									"            if (user.hasOwnProperty(prop)) {",
+									"                pm.expect(user).to.have.property(prop);",
+									"            } else {",
+									"                console.log(`User ${user.id} is missing required property: ${prop}`);",
+									"            }",
+									"        });",
+									"    });",
+									"});",
+									"",
+									"// Test if each user's role is one of the allowed roles",
+									"pm.test(\"Each user's role is one of the allowed roles\", function () {",
+									"    const responseData = pm.response.json();",
+									"    const allowedRoles = [\"Admin\", \"User\"]; // Update this with allowed roles",
+									"    responseData.forEach(function(user) {",
+									"        pm.expect(allowedRoles).to.include(user.role);",
+									"    });",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/users/",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET users/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"});",
+									"",
+									"// Verify User Properties",
+									"pm.test(\"User has all required properties\", function () {",
+									"    const users = pm.response.json();",
+									"    const user = users[0]; // Assuming the response contains only one user object",
+									"    pm.expect(user).to.have.property(\"id\");",
+									"    pm.expect(user).to.have.property(\"email\");",
+									"    pm.expect(user).to.have.property(\"description\");",
+									"    pm.expect(user).to.have.property(\"role\");",
+									"});",
+									"",
+									"pm.test(\"User role is valid\", function () {",
+									"    const users = pm.response.json();",
+									"    users.forEach(function(user) {",
+									"        pm.expect(user.role).to.be.oneOf([\"Admin\", \"User\"]);",
+									"    });",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/users/3",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET users/admins",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"});",
+									"",
+									"// Verify User Properties",
+									"pm.test(\"User has all required properties\", function () {",
+									"    const users = pm.response.json();",
+									"    const user = users[0]; // Assuming the response contains only one user object",
+									"    pm.expect(user).to.have.property(\"id\");",
+									"    pm.expect(user).to.have.property(\"email\");",
+									"    pm.expect(user).to.have.property(\"description\");",
+									"    pm.expect(user).to.have.property(\"role\");",
+									"});",
+									"",
+									"pm.test(\"User role is valid\", function () {",
+									"    const users = pm.response.json();",
+									"    users.forEach(function(user) {",
+									"        pm.expect(user.role).to.equal(\"Admin\");",
+									"    });",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/users/admin",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is OK', function () {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test('Response body is not empty', function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.be.null;",
+									"    pm.response.to.not.be.undefined;",
+									"})",
+									"",
+									"pm.test('Response body contains the newly created map', function () {",
+									"    var user = pm.response.json();",
+									"    pm.expect(user).to.have.property('id');",
+									"    pm.expect(user).to.have.property('firstName');",
+									"    pm.expect(user).to.have.property('lastName');",
+									"    pm.expect(user).to.have.property('description');",
+									"    pm.expect(user).to.have.property('passwordHash');",
+									"    pm.expect(user).to.have.property('role');",
+									"})",
+									"",
+									"pm.test('The description is not empty', function () {",
+									"    var map = pm.response.json();",
+									"    pm.expect(map.description).to.not.be.empty;",
+									"});",
+									"",
+									"pm.test('The role is \"User\"', function () {",
+									"    var map = pm.response.json();",
+									"    pm.expect(map.role).to.equal('User');",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{new-user-email}}\",\n    \"firstname\": \"temporary\",\n    \"lastname\": \"User\",\n    \"passwordhash\": \"password\",\n    \"description\": \"This is a temporary user.\",\n    \"role\": \"User\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/users/",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT users/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body is null\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									"pm.test(\"Ensure that the response body is empty\", function () {",
+									"    pm.expect(pm.response.text()).to.be.empty;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response does not contain sensitive information or unexpected data\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"updated user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/users/5",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE users/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response content type is json and not null\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).not.to.equal(\"application/json\");",
+									"    pm.expect(pm.response.text()).not.to.equal(\"null\");",
+									"",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body is empty\", function () {",
+									"    pm.expect(pm.response.text()).to.be.empty;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Verify that the resource is successfully deleted\", function () {",
+									"    pm.response.to.not.be.null;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response format is as expected\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    ",
+									"    pm.expect(responseData).to.be.null;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/users/16",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Patch/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body is null\", function () {",
+									"    const responseData = xml2Json(pm.response.text());",
+									"    pm.expect(responseData).not.to.be.null;",
+									"});",
+									"",
+									"pm.test(\"Ensure that the response body is empty\", function () {",
+									"    pm.expect(pm.response.text()).not.to.be.empty;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"pm.test(\"Verify Response Body\", function () {",
+									"    const userData = pm.response.json();",
+									"    ",
+									"    // Verify email",
+									"    pm.expect(userData.email).to.equal(\"testupdate@gmail.com\");",
+									"});",
+									"",
+									"pm.test(\"Verify Response Body Structure\", function () {",
+									"    const userData = pm.response.json();",
+									"",
+									"    // Verify the presence of required properties",
+									"    pm.expect(userData).to.have.property(\"email\");",
+									"    pm.expect(userData).to.have.property(\"passwordHash\");",
+									"",
+									"    // Verify data types of properties",
+									"    pm.expect(userData.email).to.be.a(\"string\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "BCrypt@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"testupdate@gmail.com\",\n    \"passwordhash\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{api-host}}:{{port}}/api/users/2",
+							"protocol": "https",
+							"host": [
+								"{{api-host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

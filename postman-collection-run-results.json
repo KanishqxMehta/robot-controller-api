@@ -1,0 +1,1116 @@
+{
+	"id": "0867ec4a-99f5-479f-ac42-4b12d1155469",
+	"name": "Tester Collection",
+	"timestamp": "2024-04-20T16:53:07.098Z",
+	"collection_id": "32796340-76a8a5c9-c8a0-4af9-abd3-5b35434fc5fe",
+	"folder_id": 0,
+	"environment_id": "32796340-f40b08b7-5acd-49d1-9ae8-acf656c3b02e",
+	"totalPass": 100,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-04-20T16:53:00.859Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "57c3a5da-e0d0-43b1-87d8-b2648703f263",
+			"name": "GET robot-commands",
+			"url": "https://localhost:5052/api/robot-commands/",
+			"time": 298,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response body is not empty": true,
+				"Response body contains an array of robot commands": true,
+				"Each command in the commands contains valid properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains an array of robot commands": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each command in the commands contains valid properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				298
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response body is not empty": true,
+					"Response body contains an array of robot commands": true,
+					"Each command in the commands contains valid properties": true
+				}
+			]
+		},
+		{
+			"id": "528fcbd4-229b-46e2-b7aa-3f6bcf75f156",
+			"name": "GET robot/move",
+			"url": "https://localhost:5052/api/robot-commands/move",
+			"time": 262,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response body is not empty": true,
+				"Response body contains an array of robot commands": true,
+				"Each command in the commands contains valid properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains an array of robot commands": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each command in the commands contains valid properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				262
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response body is not empty": true,
+					"Response body contains an array of robot commands": true,
+					"Each command in the commands contains valid properties": true
+				}
+			]
+		},
+		{
+			"id": "f669282d-1746-4983-bac4-4228804dcbd0",
+			"name": "GET robot/{id}",
+			"url": "https://localhost:5052/api/robot-commands/11",
+			"time": 262,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response body is not empty": true,
+				"Response body contains a single robot command": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains a single robot command": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				262
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response body is not empty": true,
+					"Response body contains a single robot command": true
+				}
+			]
+		},
+		{
+			"id": "d6b10bc8-ea4c-4cbe-97f1-6b2aa894059f",
+			"name": "POST robot",
+			"url": "https://localhost:5052/api/robot-commands/",
+			"time": 264,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Test newly created command name": true,
+				"Response body is not empty": true,
+				"Response body contains the newly created robot command": true,
+				"Check if Location header exists": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Test newly created command name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains the newly created robot command": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if Location header exists": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				264
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Test newly created command name": true,
+					"Response body is not empty": true,
+					"Response body contains the newly created robot command": true,
+					"Check if Location header exists": true
+				}
+			]
+		},
+		{
+			"id": "98abaa81-db36-4fcf-9570-b01c986eb208",
+			"name": "PUT robot/{id}",
+			"url": "https://localhost:5052/api/robot-commands/20",
+			"time": 270,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Response status code is 204": true,
+				"Response body is null": true,
+				"Ensure that the response body is empty": true,
+				"Response time is less than 200ms": true,
+				"Response does not contain sensitive information or unexpected data": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 204": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Ensure that the response body is empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response does not contain sensitive information or unexpected data": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				270
+			],
+			"allTests": [
+				{
+					"Response status code is 204": true,
+					"Response body is null": true,
+					"Ensure that the response body is empty": true,
+					"Response time is less than 200ms": true,
+					"Response does not contain sensitive information or unexpected data": true
+				}
+			]
+		},
+		{
+			"id": "5ae2ec80-649f-4e4d-8b09-64c42d64cb3b",
+			"name": "DELETE robot/{id}",
+			"url": "https://localhost:5052/api/robot-commands/39",
+			"time": 268,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Response status code is 204": true,
+				"Response content type is json and not null": true,
+				"Response body is empty": true,
+				"Verify that the resource is successfully deleted": true,
+				"Response format is as expected": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 204": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response content type is json and not null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that the resource is successfully deleted": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response format is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				268
+			],
+			"allTests": [
+				{
+					"Response status code is 204": true,
+					"Response content type is json and not null": true,
+					"Response body is empty": true,
+					"Verify that the resource is successfully deleted": true,
+					"Response format is as expected": true
+				}
+			]
+		},
+		{
+			"id": "4343bd08-011e-41e6-a535-bc297ad6200d",
+			"name": "GET maps",
+			"url": "https://localhost:5052/api/maps/",
+			"time": 263,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response body is not empty": true,
+				"Response body contains an array of maps": true,
+				"Each command in the commands contains valid properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains an array of maps": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each command in the commands contains valid properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				263
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response body is not empty": true,
+					"Response body contains an array of maps": true,
+					"Each command in the commands contains valid properties": true
+				}
+			]
+		},
+		{
+			"id": "a5e9dec3-fdbd-45d1-b8aa-8069877d895f",
+			"name": "GET maps/square",
+			"url": "https://localhost:5052/api/maps/square",
+			"time": 263,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response body is not empty": true,
+				"Response body contains an array of robot commands": true,
+				"Each command in the commands contains valid properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains an array of robot commands": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each command in the commands contains valid properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				263
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response body is not empty": true,
+					"Response body contains an array of robot commands": true,
+					"Each command in the commands contains valid properties": true
+				}
+			]
+		},
+		{
+			"id": "2ab13bbd-4c85-4cb7-8112-8261608ac233",
+			"name": "GET maps/{id}",
+			"url": "https://localhost:5052/api/maps/8",
+			"time": 306,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response contains the correct number of items": true,
+				"Response items have unique IDs": true,
+				"Response items have all required properties": true,
+				"Response items have valid values for properties": true,
+				"Response items meet certain criteria": true
+			},
+			"testPassFailCounts": {
+				"Response contains the correct number of items": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response items have unique IDs": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response items have all required properties": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response items have valid values for properties": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response items meet certain criteria": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				306
+			],
+			"allTests": [
+				{
+					"Response contains the correct number of items": true,
+					"Response items have unique IDs": true,
+					"Response items have all required properties": true,
+					"Response items have valid values for properties": true,
+					"Response items meet certain criteria": true
+				}
+			]
+		},
+		{
+			"id": "79aa557d-2615-43d1-b82e-c848fb16ac40",
+			"name": "POST maps",
+			"url": "https://localhost:5052/api/maps/",
+			"time": 265,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Test newly created map name": true,
+				"Response body is not empty": true,
+				"Response body contains the newly created map": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Test newly created map name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains the newly created map": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				265
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Test newly created map name": true,
+					"Response body is not empty": true,
+					"Response body contains the newly created map": true
+				}
+			]
+		},
+		{
+			"id": "656380a6-194c-40fe-bc2d-523036f7ce26",
+			"name": "PUT maps/{id}",
+			"url": "https://localhost:5052/api/maps/18",
+			"time": 264,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Response status code is 204": true,
+				"Response body is null": true,
+				"Ensure that the response body is empty": true,
+				"Response time is less than 200ms": true,
+				"Response does not contain sensitive information or unexpected data": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 204": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Ensure that the response body is empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response does not contain sensitive information or unexpected data": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				264
+			],
+			"allTests": [
+				{
+					"Response status code is 204": true,
+					"Response body is null": true,
+					"Ensure that the response body is empty": true,
+					"Response time is less than 200ms": true,
+					"Response does not contain sensitive information or unexpected data": true
+				}
+			]
+		},
+		{
+			"id": "94007cd5-1f08-4657-a8e8-e86a7de17477",
+			"name": "DELETE maps/{id}",
+			"url": "https://localhost:5052/api/maps/25",
+			"time": 266,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Response status code is 204": true,
+				"Response content type is json and not null": true,
+				"Response body is empty": true,
+				"Verify that the resource is successfully deleted": true,
+				"Response format is as expected": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 204": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response content type is json and not null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that the resource is successfully deleted": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response format is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				266
+			],
+			"allTests": [
+				{
+					"Response status code is 204": true,
+					"Response content type is json and not null": true,
+					"Response body is empty": true,
+					"Verify that the resource is successfully deleted": true,
+					"Response format is as expected": true
+				}
+			]
+		},
+		{
+			"id": "66854997-d3d6-434a-ae2e-31b05541829a",
+			"name": "GET maps/{id}/{x}-{y}",
+			"url": "https://localhost:5052/api/maps/10/2-10",
+			"time": 264,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the correct Content-Type header": true,
+				"Response body is a boolean value": true,
+				"Response body is true": true,
+				"Response time is within an acceptable range": true,
+				"Response body is either true or false": true,
+				"Response time is less than 200ms": true,
+				"Response body is either true or false using strict equality": true,
+				"Verify that the response body is a valid boolean value": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the correct Content-Type header": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is within an acceptable range": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is either true or false": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is either true or false using strict equality": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that the response body is a valid boolean value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				264
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the correct Content-Type header": true,
+					"Response body is a boolean value": true,
+					"Response body is true": true,
+					"Response time is within an acceptable range": true,
+					"Response body is either true or false": true,
+					"Response time is less than 200ms": true,
+					"Response body is either true or false using strict equality": true,
+					"Verify that the response body is a valid boolean value": true
+				}
+			]
+		},
+		{
+			"id": "ef3298d5-c2b6-4894-9014-b546359c4ae9",
+			"name": "GET users",
+			"url": "https://localhost:5052/api/users/",
+			"time": 265,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response body is not empty and is JSON": true,
+				"Response contains at least 10 users": true,
+				"Each user has a unique ID": true,
+				"Each user has all required properties": true,
+				"Each user's role is one of the allowed roles": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty and is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains at least 10 users": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each user has a unique ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each user has all required properties": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each user's role is one of the allowed roles": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				265
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response body is not empty and is JSON": true,
+					"Response contains at least 10 users": true,
+					"Each user has a unique ID": true,
+					"Each user has all required properties": true,
+					"Each user's role is one of the allowed roles": true
+				}
+			]
+		},
+		{
+			"id": "0ec026cb-a146-4c44-95dc-85382e85357d",
+			"name": "GET users/{id}",
+			"url": "https://localhost:5052/api/users/3",
+			"time": 275,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response body is not empty": true,
+				"User has all required properties": true,
+				"User role is valid": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User has all required properties": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User role is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				275
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response body is not empty": true,
+					"User has all required properties": true,
+					"User role is valid": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "893b805b-4e04-4ce5-93d4-0246e5f30e0d",
+			"name": "GET users/admins",
+			"url": "https://localhost:5052/api/users/admin",
+			"time": 265,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response body is not empty": true,
+				"User has all required properties": true,
+				"User role is valid": true,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User has all required properties": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User role is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				265
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response body is not empty": true,
+					"User has all required properties": true,
+					"User role is valid": true,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "33007c4a-cf87-47f1-8ce7-cdf5c6a1b656",
+			"name": "POST users",
+			"url": "https://localhost:5052/api/users/",
+			"time": 417,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is OK": true,
+				"Response body is not empty": true,
+				"Response body contains the newly created map": true,
+				"The description is not empty": true,
+				"The role is \"User\"": true
+			},
+			"testPassFailCounts": {
+				"Status code is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body contains the newly created map": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The description is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The role is \"User\"": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				417
+			],
+			"allTests": [
+				{
+					"Status code is OK": true,
+					"Response body is not empty": true,
+					"Response body contains the newly created map": true,
+					"The description is not empty": true,
+					"The role is \"User\"": true
+				}
+			]
+		},
+		{
+			"id": "08e2f0f6-262f-4b5a-9135-f3c1f204ee28",
+			"name": "PUT users/{id}",
+			"url": "https://localhost:5052/api/users/5",
+			"time": 264,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Response status code is 204": true,
+				"Response body is null": true,
+				"Ensure that the response body is empty": true,
+				"Response time is less than 200ms": true,
+				"Response does not contain sensitive information or unexpected data": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 204": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Ensure that the response body is empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response does not contain sensitive information or unexpected data": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				264
+			],
+			"allTests": [
+				{
+					"Response status code is 204": true,
+					"Response body is null": true,
+					"Ensure that the response body is empty": true,
+					"Response time is less than 200ms": true,
+					"Response does not contain sensitive information or unexpected data": true
+				}
+			]
+		},
+		{
+			"id": "d02af911-4fce-4bf2-9ece-5288f61bdacf",
+			"name": "DELETE users/{id}",
+			"url": "https://localhost:5052/api/users/15",
+			"time": 265,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Response status code is 204": true,
+				"Response content type is json and not null": true,
+				"Response body is empty": true,
+				"Verify that the resource is successfully deleted": true,
+				"Response format is as expected": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 204": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response content type is json and not null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify that the resource is successfully deleted": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response format is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				265
+			],
+			"allTests": [
+				{
+					"Response status code is 204": true,
+					"Response content type is json and not null": true,
+					"Response body is empty": true,
+					"Verify that the resource is successfully deleted": true,
+					"Response format is as expected": true
+				}
+			]
+		},
+		{
+			"id": "f31684e0-3be5-4b8a-8fa5-fdc4cd107b2c",
+			"name": "DELETE Patch/{id}",
+			"url": "https://localhost:5052/api/users/2",
+			"time": 395,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response body is null": true,
+				"Ensure that the response body is empty": true,
+				"Response time is less than 200ms": true,
+				"Verify Response Body": true,
+				"Verify Response Body Structure": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body is null": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Ensure that the response body is empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify Response Body Structure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				395
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response body is null": true,
+					"Ensure that the response body is empty": true,
+					"Response time is less than 200ms": true,
+					"Verify Response Body": true,
+					"Verify Response Body Structure": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 5661,
+	"collection": {
+		"requests": [
+			{
+				"id": "57c3a5da-e0d0-43b1-87d8-b2648703f263",
+				"method": "GET"
+			},
+			{
+				"id": "528fcbd4-229b-46e2-b7aa-3f6bcf75f156",
+				"method": "GET"
+			},
+			{
+				"id": "f669282d-1746-4983-bac4-4228804dcbd0",
+				"method": "GET"
+			},
+			{
+				"id": "d6b10bc8-ea4c-4cbe-97f1-6b2aa894059f",
+				"method": "POST"
+			},
+			{
+				"id": "98abaa81-db36-4fcf-9570-b01c986eb208",
+				"method": "PUT"
+			},
+			{
+				"id": "5ae2ec80-649f-4e4d-8b09-64c42d64cb3b",
+				"method": "DELETE"
+			},
+			{
+				"id": "4343bd08-011e-41e6-a535-bc297ad6200d",
+				"method": "GET"
+			},
+			{
+				"id": "a5e9dec3-fdbd-45d1-b8aa-8069877d895f",
+				"method": "GET"
+			},
+			{
+				"id": "2ab13bbd-4c85-4cb7-8112-8261608ac233",
+				"method": "GET"
+			},
+			{
+				"id": "79aa557d-2615-43d1-b82e-c848fb16ac40",
+				"method": "POST"
+			},
+			{
+				"id": "656380a6-194c-40fe-bc2d-523036f7ce26",
+				"method": "PUT"
+			},
+			{
+				"id": "94007cd5-1f08-4657-a8e8-e86a7de17477",
+				"method": "DELETE"
+			},
+			{
+				"id": "66854997-d3d6-434a-ae2e-31b05541829a",
+				"method": "GET"
+			},
+			{
+				"id": "ef3298d5-c2b6-4894-9014-b546359c4ae9",
+				"method": "GET"
+			},
+			{
+				"id": "0ec026cb-a146-4c44-95dc-85382e85357d",
+				"method": "GET"
+			},
+			{
+				"id": "893b805b-4e04-4ce5-93d4-0246e5f30e0d",
+				"method": "GET"
+			},
+			{
+				"id": "33007c4a-cf87-47f1-8ce7-cdf5c6a1b656",
+				"method": "POST"
+			},
+			{
+				"id": "08e2f0f6-262f-4b5a-9135-f3c1f204ee28",
+				"method": "PUT"
+			},
+			{
+				"id": "d02af911-4fce-4bf2-9ece-5288f61bdacf",
+				"method": "DELETE"
+			},
+			{
+				"id": "f31684e0-3be5-4b8a-8fa5-fdc4cd107b2c",
+				"method": "PATCH"
+			}
+		]
+	}
+}
